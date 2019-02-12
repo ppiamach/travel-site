@@ -1,5 +1,9 @@
 var gulp = require('gulp'),
-	watch = require('gulp-watch');
+	watch = require('gulp-watch'),
+	postcss = require('gulp-postcss'),
+	autoprefixer = require('autoprefixer-core'),
+	cssvars = require('postcss-simple-vars'),
+	cssnested = require('postcss-nested');
 
 gulp.task('default', function() {
 	console.log('You have created a task!');
@@ -10,7 +14,10 @@ gulp.task('html', function() {
 });
 
 gulp.task('styles', function() {
-	console.log('SASS or PostCSS running here.');
+	return gulp
+		.src('./app/assets/styles/styles.css')
+		.pipe(postcss([cssnested, cssvars, autoprefixer({ browsers: ['> 0%'] })]))
+		.pipe(gulp.dest('./app/temp/styles'));
 });
 
 gulp.task('watch', function() {
