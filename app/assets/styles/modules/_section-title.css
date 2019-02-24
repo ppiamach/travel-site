@@ -8,8 +8,16 @@
 	/* text-decoration: underline; */
 	margin-bottom: 0;
 
+	&__b-margin {
+		margin-bottom: 3.125rem;
+	}
+
 	@mixin atSmall {
 		font-size: 3.75rem;
+	}
+
+	&--blue {
+		color: $mainBlue;
 	}
 
 	&__icon {
@@ -19,6 +27,8 @@
 		margin-bottom: .6rem;
 
 		@mixin atSmall {
+			position: relative;
+			top: 8px;
 			margin-right: 0.5rem;
 			margin-left: 0;
 			margin-bottom: 0;
