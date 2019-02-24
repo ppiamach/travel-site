@@ -3,8 +3,16 @@ increase padding by 65px but reduce margin by same amount */
 .row {
 	@mixin clearfix;
 
+	&--t-padding {
+		padding-top: 80px;
+	}
+
 	&--gutters {
 		margin-right: -65px;
+	}
+
+	&--gutters-small {
+		margin-right: -45px;
 	}
 
 	&--gutters-large {
@@ -13,6 +21,10 @@ increase padding by 65px but reduce margin by same amount */
 
 	&--gutters > div {
 		padding-right: 65px;
+	}
+
+	&--gutters-small > div {
+		padding-right: 45px;
 	}
 
 	&--gutters-large > div {
@@ -49,6 +61,18 @@ increase padding by 65px but reduce margin by same amount */
 
 		&__medium-8--smaller {
 			width: 63%;
+		}
+	}
+
+	/* Beguin Equal Height Rules */
+	&--equal-height-at-medium {
+		@mixin atMedium {
+			display: flex;
+		}
+
+		& > div {
+			float: none;
+			display: flex;
 		}
 	}
 }
