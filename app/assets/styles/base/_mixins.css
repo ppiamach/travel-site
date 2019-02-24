@@ -1,3 +1,7 @@
+/* mixins are used for bigger screens than mobile
+default properties are for mobile size screen
+once mixins are introduced, those target bigger screens */
+
 @define-mixin atSmall {
 	@media (min-width: 530px) {
 		@mixin-content;
