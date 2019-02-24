@@ -749,17 +749,18 @@ once mixins are introduced, those target bigger screens */
 .section-title {
 	font-size: 2.55rem;
 	font-weight: 100;
+	/* border-bottom: 1px solid white; */
+	/* display: inline-block; */
+	/* width: fit-content; */
 	text-align: center;
-	border-bottom: 1px solid white;
-	display: inline-block;
-	margin-left: 10%;
+	/* text-decoration: underline; */
+	margin-bottom: 0;
 }
 
 @media (min-width: 530px) {
 
 .section-title {
-		font-size: 3.75rem;
-		margin-left: 33%
+		font-size: 3.75rem
 }
 	}
 
@@ -777,6 +778,39 @@ once mixins are introduced, those target bigger screens */
 			margin-left: 0;
 			margin-bottom: 0;
 			display: inline-block
+	}
+	}
+
+.section-title__b-border {
+		height: 0;
+		border-bottom: 1px solid white;
+		position: relative;
+		margin-bottom: 3.125rem;
+		width: 84%;
+		left: 8%;
+	}
+
+@media (min-width: 530px) {
+
+.section-title__b-border {
+			width: 80%;
+			left: 10%
+	}
+	}
+
+@media (min-width: 800px) {
+
+.section-title__b-border {
+			width: 53%;
+			left: 24%
+	}
+	}
+
+@media (min-width: 1200px) {
+
+.section-title__b-border {
+			width: 44%;
+			left: 28%
 	}
 	}
 
