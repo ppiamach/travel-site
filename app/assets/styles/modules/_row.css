@@ -1,3 +1,5 @@
+/* gutters counteract margin-right for padding-right
+increase padding by 65px but reduce margin by same amount */
 .row {
 	@mixin clearfix;
 

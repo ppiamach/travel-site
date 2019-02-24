@@ -616,6 +616,13 @@ once mixins are introduced, those target bigger screens */
 		color: #fff;
 	}
 
+.page-section--testimonials {
+		background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+		-webkit-background-size: cover;
+		   -moz-background-size: cover;
+		        background-size: cover;
+	}
+
 .headline {
 	font-size: 1.9rem;
 	font-weight: 300;
@@ -669,6 +676,9 @@ once mixins are introduced, those target bigger screens */
 .headline--no-t-margin {
 		margin-top: 0;
 	}
+
+/* gutters counteract margin-right for padding-right
+increase padding by 65px but reduce margin by same amount */
 
 .row::after {
 		content: "";
@@ -757,11 +767,19 @@ once mixins are introduced, those target bigger screens */
 	margin-bottom: 0;
 }
 
+.section-title__b-margin {
+		margin-bottom: 3.125rem;
+	}
+
 @media (min-width: 530px) {
 
 .section-title {
 		font-size: 3.75rem
 }
+	}
+
+.section-title--blue {
+		color: #2f5572;
 	}
 
 .section-title__icon {
@@ -774,6 +792,8 @@ once mixins are introduced, those target bigger screens */
 @media (min-width: 530px) {
 
 .section-title__icon {
+			position: relative;
+			top: 8px;
 			margin-right: 0.5rem;
 			margin-left: 0;
 			margin-bottom: 0;
@@ -854,4 +874,38 @@ once mixins are introduced, those target bigger screens */
 			text-align: left;
 			margin-top: 2rem
 	}
+	}
+
+.testimonial {
+	background-color: rgba(255, 255, 255, .7);
+	padding: 0 1.8125rem 1px 1.8125rem;
+}
+
+.testimonial__photo {
+		-webkit-border-radius: 80px;
+		   -moz-border-radius: 80px;
+		        border-radius: 80px;
+		overflow: hidden;
+		width: 160px;
+		height: 160px;
+		margin: 0 auto -80px auto;
+		position: relative;
+		top: -80px;
+		border: 6px solid rgba(255, 255, 255, .7);
+	}
+
+.testimonial__title {
+		color: #2f5572;
+		text-align: center;
+		font-size: 1.5rem;
+		font-weight: 500;
+		margin: 0;
+	}
+
+.testimonial__subtitle {
+		color: #d59541;
+		text-align: center;
+		font-weight: 400;
+		font-size: 0.9375rem;
+		margin: 0.25rem 0 1rem 0;
 	}
