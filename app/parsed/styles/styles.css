@@ -1174,7 +1174,15 @@ Instead edit gulp/templates/sprite */
 	width: 100%;
 	z-index: 2;
 	padding: 10px 0;
+	-webkit-transition: background-color .3s ease-out;
+	-o-transition: background-color .3s ease-out;
+	-moz-transition: background-color .3s ease-out;
+	transition: background-color .3s ease-out;
 }
+
+.site-header--is-expanded {
+		background-color: rgba(47,85,114, .55);
+	}
 
 @media (min-width: 800px) {
 
@@ -1184,8 +1192,11 @@ Instead edit gulp/templates/sprite */
 }
 	}
 
+@media (min-width: 800px) {
+
 .site-header__btn-container {
-		float: right;
+			float: right
+	}
 	}
 
 .site-header__logo {
@@ -1226,6 +1237,7 @@ Instead edit gulp/templates/sprite */
 		width: 20px;
 		height: 20px;
 		background-color: white;
+		z-index: 10;
 		position: absolute;
 		top: 10px;
 		right: 10px;
@@ -1241,22 +1253,62 @@ Instead edit gulp/templates/sprite */
 /* this creates the menu bar for small screens. Can be done with bootstrap easier. */
 
 .site-header__menu-content {
-		display: none;
+		opacity: 0;
+		-webkit-transform: scale(1.2);
+		   -moz-transform: scale(1.2);
+		    -ms-transform: scale(1.2);
+		     -o-transform: scale(1.2);
+		        transform: scale(1.2);
+		-webkit-transition: all .3s ease-out;
+		-o-transition: all .3s ease-out;
+		-moz-transition: all .3s ease-out;
+		transition: all .3s ease-out;
+		position: relative;
+		z-index: -10;
+		padding-top: 90px;
+		text-align: center;
 	}
 
 @media (min-width: 800px) {
 
 .site-header__menu-content {
-			display: block
+			opacity: 1;
+			z-index: 1;
+			padding-top: 0;
+			-webkit-transform: scale(1);
+			   -moz-transform: scale(1);
+			    -ms-transform: scale(1);
+			     -o-transform: scale(1);
+			        transform: scale(1)
 	}
 	}
 
 .site-header__menu-content--is-visible {
-			display: block;
+			opacity: 1;
+			z-index: 1;
+			-webkit-transform: scale(1);
+			   -moz-transform: scale(1);
+			    -ms-transform: scale(1);
+			     -o-transform: scale(1);
+			        transform: scale(1);
 		}
 
+.primary-nav {
+	padding-top: 10px;
+}
+
+@media (min-width: 800px) {
+
+.primary-nav {
+		padding-top: 0
+}
+	}
+
+@media (min-width: 800px) {
+
 .primary-nav--pull-right {
-		float: right;
+			float: right
+	}
 	}
 
 .primary-nav ul {
@@ -1272,8 +1324,28 @@ Instead edit gulp/templates/sprite */
 
 .primary-nav li {
 		list-style: none;
-		float: left;
-		padding-right: 20px;
+		padding-right: 7px;
+		display: inline-block;
+	}
+
+@media (min-width: 800px) {
+
+.primary-nav li {
+			padding-right: 20px;
+			float: left;
+			display: block
+	}
+	}
+
+.primary-nav li:last-child {
+		padding: 0;
+	}
+
+@media (min-width: 800px) {
+
+.primary-nav li:last-child {
+			padding-right: 20px
+	}
 	}
 
 .primary-nav a {
@@ -1281,5 +1353,16 @@ Instead edit gulp/templates/sprite */
 		text-decoration: none;
 		font-weight: 300;
 		display: block;
-		padding: 12px 0;
+		padding: 5px 8px;
+		font-size: .8rem;
+		background-color: rgba(47,85,114, .5);
+	}
+
+@media (min-width: 800px) {
+
+.primary-nav a {
+			padding: 12px 0;
+			font-size: 1rem;
+			background-color: transparent
+	}
 	}
