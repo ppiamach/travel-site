@@ -1187,9 +1187,14 @@ Instead edit gulp/templates/sprite */
 @media (min-width: 800px) {
 
 .site-header {
-		background-color: rgba(47,85,114, .3)
+		background-color: rgba(47,85,114, .3);
 		/* background-color: rgba(47, 85, 114, .3); */
+		position: fixed
 }
+
+		.site-header--dark {
+			background-color: rgba(23, 51, 72, .85);
+		}
 	}
 
 @media (min-width: 800px) {
@@ -1208,6 +1213,12 @@ Instead edit gulp/templates/sprite */
 		    -ms-transform: translate(-50%) scale(.8);
 		     -o-transform: translate(-50%) scale(.8);
 		        transform: translate(-50%) scale(.8);
+		-webkit-transition: -webkit-transform .3s ease-out;
+		transition: -webkit-transform .3s ease-out;
+		-o-transition: -o-transform .3s ease-out;
+		-moz-transition: transform .3s ease-out, -moz-transform .3s ease-out;
+		transition: transform .3s ease-out;
+		transition: transform .3s ease-out, -webkit-transform .3s ease-out, -moz-transform .3s ease-out, -o-transform .3s ease-out;
 		-webkit-transform-origin: 50% 0%;
 		   -moz-transform-origin: 50% 0%;
 		    -ms-transform-origin: 50% 0%;
@@ -1221,12 +1232,20 @@ Instead edit gulp/templates/sprite */
 
 .site-header__logo {
 			left: auto;
-			-webkit-transform: translate(0);
-			   -moz-transform: translate(0);
-			    -ms-transform: translate(0);
-			     -o-transform: translate(0);
-			        transform: translate(0)
+			-webkit-transform: translateX(0);
+			   -moz-transform: translateX(0);
+			    -ms-transform: translateX(0);
+			     -o-transform: translateX(0);
+			        transform: translateX(0)
 	}
+
+			.site-header--dark .site-header__logo {
+				-webkit-transform: scale(.57);
+				   -moz-transform: scale(.57);
+				    -ms-transform: scale(.57);
+				     -o-transform: scale(.57);
+				        transform: scale(.57);
+			}
 	}
 
 .site-header__logo__graphic {
