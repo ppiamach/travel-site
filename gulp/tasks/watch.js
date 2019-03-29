@@ -29,6 +29,6 @@ gulp.task('cssInject', ['styles'], function() {
 	return gulp.src('./app/parsed/styles/styles.css').pipe(browserSync.stream());
 });
 
-gulp.task('scriptsRefresh', ['scripts'] ,function(){
+gulp.task('scriptsRefresh', ['scripts'], function() {
 	browserSync.reload();
-})
+});
